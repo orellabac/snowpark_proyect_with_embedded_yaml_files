@@ -1,0 +1,13 @@
+definition_version: "1.1"
+snowpark:
+  project_name: "my_snowpark_project"
+  stage_name: "dev_deployment"
+  src: "app/"
+  procedures:
+    - name: run_commands
+      handler: "procedures.run_commands"
+      signature:
+        - name: "yaml_file_path"
+          type: "string"
+      execute_as_caller: true
+      returns: string
